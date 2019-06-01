@@ -7,6 +7,10 @@
   "author": "Evgeny <me@awesomeobserver.me>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "rollup --config ./rollup.config.ts"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
@@ -14,6 +18,9 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.17.1",
+    "rollup": "^1.13.1",
+    "rollup-plugin-terser": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
     "typescript": "^3.5.1"
   }
 }
