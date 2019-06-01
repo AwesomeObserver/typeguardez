@@ -291,24 +291,25 @@ export type Bottom<T> = T extends string
   ? Empty.Object
   : never;
 
-export interface StringTMap<T> {
+export type StringTMap<T> = {
   [key: string]: T;
-}
-export interface NumberTMap<T> {
+};
+
+export type NumberTMap<T> = {
   [key: number]: T;
-}
+};
 
-export interface StringAnyMap extends StringTMap<any> {}
-export interface NumberAnyMap extends NumberTMap<any> {}
+export interface StringAnyMap<T = any> extends StringTMap<T> {}
+export interface NumberAnyMap<T = any> extends NumberTMap<T> {}
 
-export interface StringStringMap extends StringTMap<string> {}
-export interface NumberStringMap extends NumberTMap<string> {}
+export interface StringStringMap<T = string> extends StringTMap<T> {}
+export interface NumberStringMap<T = string> extends NumberTMap<T> {}
 
-export interface StringNumberMap extends StringTMap<number> {}
-export interface NumberNumberMap extends NumberTMap<number> {}
+export interface StringNumberMap<T = number> extends StringTMap<T> {}
+export interface NumberNumberMap<T = number> extends NumberTMap<T> {}
 
-export interface StringBooleanMap extends StringTMap<boolean> {}
-export interface NumberBooleanMap extends NumberTMap<boolean> {}
+export interface StringBooleanMap<T = boolean> extends StringTMap<T> {}
+export interface NumberBooleanMap<T = boolean> extends NumberTMap<T> {}
 
 // For every properties K of type T, transform it to U
 export declare function mapObject<K extends string, T, U>(
