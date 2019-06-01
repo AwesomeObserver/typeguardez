@@ -36,9 +36,17 @@ export const isObject = <T extends Maybe<{}>>(
 ): value is NonArray<NonPrimitive<NonNullable<T>>> =>
   value != null && !Array.isArray(value) && typeof value === 'object';
 
+/**
+ *
+ * Return true if value is Date.
+ */
 export const isDate = (value: any): value is Date =>
   value instanceof Date && !isNaN(+value);
 
+/**
+ *
+ * Return true if value is PromiseLike.
+ */
 export const isPromise = (value: any): value is PromiseLike<any> =>
   value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
 
